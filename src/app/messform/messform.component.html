@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<style>
+form {
+	width:300px;
+    margin: 0 auto;
+}
+form input, form textarea {
+	width:100%;
+}
+</style>
+</head>
+<body>  
+    <header>
+      <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand text-white" routerLink="/engler">Engler</a>
+        <div class="container">
+          <ul>
+            <li ><a routerLink="/engler">EngLer</a></li>
+            <li ><a routerLink="/menu">Games</a></li>
+            <li ><a routerLink="/grammar">Grammar</a></li>
+            <li ><a routerLink="/messform">Contact us</a></li>
+            <li ><a routerLink="/account">Account</a></li>
+          </ul>
+        </div>
+      </nav>
+      </header>
+      <div class="fon">
+      <h3>Contact Form</h3>
+
+      <div class="container">
+         <form action="https://formspree.io/f/asduhcx" method="POST"> 
+          <label for="fname">Your Name</label>
+          <input type="text" id="fname" name="name" placeholder="Your name..">
+      
+          <label for="lname">Email</label>
+          <input type="text" id="lname" name="email" placeholder="Your Email..">
+      
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Poland</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+            <option value="usa">Belarus</option>
+            <option value="usa">Germany</option>
+          </select>
+      
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="text" placeholder="Write something.." style="height:200px"></textarea>
+      
+          <input type="submit" value="Submit" routerLink="/messform">
+        </form>
+      </div>
+    </div>
+</body>
+</html>

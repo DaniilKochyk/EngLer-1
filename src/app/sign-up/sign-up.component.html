@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Dark Navigation</title> 
+  <link rel="stylesheet" href="sign-up.component.css">
+
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+ </head>
+<body>
+<div class="row">
+    <div class="col s8 offset-s2">
+        <div class="card">
+            <div class="sm-jumbotron center-align">
+                <h2>User Registration</h2>
+            </div>
+            <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="validate" type="text" name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" required>
+                        <label data-error="Required field!">UserName</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input class="validate" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" required minlength="4">
+                        <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required field!':'Minimum 3 characters needed'):''">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="Email" #Email="ngModel" [(ngModel)]="user.Email" [pattern]="emailPattern">
+                        <label>Email</label>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="user.FirstName">
+                    <label>FirstName</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" name="LastName" #LastName="ngModel" [(ngModel)]="user.LastName">
+                    <label>LastName</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
